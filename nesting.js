@@ -50,7 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+  for(var i=0;i<employees.length; i++){
+    for(let key in employees[i])
+    if(employees[i].firstName ==="Theo"){ 
+      employees.splice([i],1);
+    } if(employees[i].firstName ===  "Lorie"){
+       employees[i].department ="HR";
+    }
+  } return employees;
+}
+employeeUpdater();
 
 
 
@@ -68,7 +78,10 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(arr){
+
+  return Array.from(new Set(arr));
+} 
 
 
 
@@ -97,8 +110,9 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+ var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
+
 
 
 
@@ -129,6 +143,7 @@ var myCar = {
 }
 // Do not edit the code above.
 
+
 /*
   Above is some information about my car. As you can see, I am not the best driver.
   I have caused a few accidents.
@@ -138,7 +153,13 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  for(i=0;i<myCar.accidents.length;i++){ 
+     if(myCar.accidents[i].atFaultForAccident){
+        myCar.accidents[i].atFaultForAccident =false;
+      }
+    }
+  }
 
 
 
@@ -157,6 +178,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
 
 
+function looper() {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (let j = 0; j < numsArr[i].length; j++) {
+      let nums = numsArr[i][j];
+      if (nums % 2 === 0) {
+        numsArr[i][j] = "even";
+      } else if (nums % 2 !== 0) {
+        numsArr[i][j] = "odd";
+      }
+    }
+  }
+  return numsArr;
+}

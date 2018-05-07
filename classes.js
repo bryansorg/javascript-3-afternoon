@@ -36,18 +36,10 @@ class Employee {
     this.email = email;
     this.age = age;
   }
-  makeWidget(first_name, last_name) {
+  makeWidget() {
     return this.first_name + " " + this.last_name + " " + "Widget";
   }
 }
-var employee1 = new Employee(
-  "bryan",
-  "espinosa",
-  "fakeemail@gmail.com",
-  34,
-  makeWidget()
-);
-console.log(employee1);
 
 ////////// PROBLEM 2 //////////
 
@@ -66,7 +58,7 @@ console.log(employee1);
 */
 
 class Manager extends Employee {
-  constructor(first_name, last_name, email, age, reports) {
+  constructor(first_name, last_name, email, age) {
     super(first_name, last_name, email, age);
     this.reports = [];
   }
@@ -74,6 +66,8 @@ class Manager extends Employee {
     this.reports.push(employee);
   }
   fire(index) {
+    console.log(index);
+
     this.reports.splice(index, 1);
   }
 }
